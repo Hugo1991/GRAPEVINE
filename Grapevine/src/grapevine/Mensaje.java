@@ -12,4 +12,15 @@ package grapevine;
 public class Mensaje {
     private String emisor;
     private String mensaje;
+    
+    public String toString(){
+        return emisor+": "+mensaje;        
+    }
+    public void enviarMensaje(String mensaje){
+        String msn = mensaje;
+    }
+    public String editarMensaje(String mensaje){
+        this.mensaje=mensaje;
+        return this.toString();
+    }
 }

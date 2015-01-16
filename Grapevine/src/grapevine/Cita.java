@@ -14,4 +14,27 @@ import java.util.GregorianCalendar;
 public class Cita {
     private GregorianCalendar fecha;
     private GregorianCalendar hora;
+    private String motivo;
+    
+    public Cita(){}
+    
+    public Cita(GregorianCalendar fecha,GregorianCalendar hora,String motivo){
+        
+    }
+    
+    private void setFecha(){}
+    private void setHora(){}
+    private void setMotivo(){}
+    
+    public GregorianCalendar getFecha(){
+        return fecha;
+    }
+    public GregorianCalendar gethora(){
+        return hora;
+    }
+    public String getMotivo(){
+        return motivo;
+    }
+    
+    
 }
