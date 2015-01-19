@@ -13,12 +13,12 @@ import java.util.ArrayList;
  */
 public class Cita {
     private ArrayList <Participante> participantes;
-    private Reunion cita;
+    private Reunion reunion;
     
     // DUDA de 1 en 1 o varios ???????????????????????????????????????
     public Cita(){}
-    public Cita(ArrayList <Participante> p,Reunion c){
-        setCita(c);
+    public Cita(ArrayList <Participante> p,Reunion r){
+        setCita(r);
         if (p!=null){
             for(Participante par:p)
                 setParticipante(par);
@@ -32,12 +32,12 @@ public class Cita {
         this.participantes.add(p);
     }
     
-    public void setCita(Reunion cita){
-        this.cita=cita;
+    public void setCita(Reunion reunion){
+        this.reunion=reunion;
     }
     
-    public Reunion getCita(){
-        return cita;
+    public Reunion getreunion(){
+        return reunion;
     }
     public ArrayList<Participante> getParticipantes(){
         return participantes;

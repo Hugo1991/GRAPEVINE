@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 package grapevine;
-
+import akka.actor.UntypedActor;
+import java.util.ArrayList;
 /**
  *
  * @author Hugo
  */
-public class Participante  {
+public class Participante extends UntypedActor {
     private String nombre;
     private String direccion;
     private Agenda agenda;
@@ -46,9 +47,16 @@ public class Participante  {
     public void emitirCita(){
         Reunion cita = new Reunion();
     }
-    
-    public void onReceive(Object cita){
+    @Override
+    public void onReceive(Object reunion)throws Exception{
     //Comprobar Disponibilidad; yes = se guarda cita en reunion
+        Reunion reunion1=(Reunion) reunion;
+        if(!agenda.comprobar(reunion1)){
+            Cita cita = new Cita();
+            //añadir reunion a cita
+            //añadir participantes a cita
+        }
+        
     }
     
     

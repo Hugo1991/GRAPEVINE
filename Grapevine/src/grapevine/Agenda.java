@@ -6,25 +6,26 @@
 package grapevine;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  *
  * @author Hugo
  */
 public class Agenda {
-    private ArrayList<Cita> reuniones;
+    private ArrayList<Cita> citas;
     public Agenda(){}
-    public Agenda(ArrayList<Cita> reuniones){
-        if (reuniones != null){
-            for(Cita r:reuniones)
-                setReunion(r);
+    public Agenda(ArrayList<Cita> citas){
+        if (citas != null){
+            for(Cita c:citas)
+                setCita(c);
         }else{
             new ArrayList();
         }
     }
     
-    public void setReunion(Cita r){
-        reuniones.add(r);
+    public void setCita(Cita c){
+        citas.add(c);
     }
     
     
@@ -33,20 +34,29 @@ public class Agenda {
     public String toString(){
         StringBuffer sb = new StringBuffer();
         sb.append("Reuniones:\n");
-        for(Cita r:reuniones)
-            sb.append(r.toString()+"\n");
+        for(Cita c:citas)
+            sb.append(c.toString()+"\n");
         return sb.toString();
     }
-    
-    public boolean comprobar(Reunion cita){
-        // buscar citas en las reuniones ----------------------------------
+    public ArrayList<Cita> getReunion(){
+        return citas;
+    }
+    public boolean comprobar(Reunion reunion){
+        // buscar citas en las reuniones ----------------------------------++
+        boolean encontrado = false;
+        Iterator i = citas.iterator();
+        do{
+            Cita c= (Cita)i.next();
+            if(c.getreunion().getFecha() == reunion.getFecha())
+                encontrado = true;
+        }while(i.hasNext()& !encontrado);
         return true;
     }
     private void activar(){
     
     }
     
-    public void borrarReunion(Cita reunion){
+    public void borrarCita(Cita cita){
     
      // Borrar Reunion -----------------------------------------------------
     }

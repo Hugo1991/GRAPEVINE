@@ -12,7 +12,7 @@ import java.util.logging.Logger;
  * @author Hugo
  */
 public class Inicio extends javax.swing.JFrame {
-    Participante p=new Participante();
+    //Participante p=new Participante();
     /**
      * Creates new form Inicio
      */
@@ -120,10 +120,10 @@ public class Inicio extends javax.swing.JFrame {
         if(!jTextField1.getText().equals("")){
             try{
                 InetAddress address = InetAddress.getLocalHost();
-                p.setNombre(jTextField1.getText().trim());
-                p.setDireccion(address.getHostAddress());
-            }catch(ErrorDatos e){
-                System.out.println(e);
+                //p.setNombre(jTextField1.getText().trim());
+                //p.setDireccion(address.getHostAddress());
+           // }catch(ErrorDatos e){
+           //     System.out.println(e);
             } catch (UnknownHostException ex) {
                 Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
             }
