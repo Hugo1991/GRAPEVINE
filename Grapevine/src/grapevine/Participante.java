@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author Hugo
  */
-public class Participante extends UntypedActor {
+public class Participante {
     private String nombre;
     private String direccion;
     private Agenda agenda;
@@ -47,17 +47,10 @@ public class Participante extends UntypedActor {
     public void emitirCita(){
         Reunion cita = new Reunion();
     }
-    @Override
-    public void onReceive(Object reunion)throws Exception{
-    //Comprobar Disponibilidad; yes = se guarda cita en reunion
-        Reunion reunion1=(Reunion) reunion;
-        if(!agenda.comprobar(reunion1)){
-            Cita cita = new Cita();
-            //añadir reunion a cita
-            //añadir participantes a cita
-        }
+    
+    
         
-    }
+    
     
     
 }

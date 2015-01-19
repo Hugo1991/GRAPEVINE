@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package grapevine;
+import java.awt.event.KeyEvent;
 import java.net.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -12,7 +13,7 @@ import java.util.logging.Logger;
  * @author Hugo
  */
 public class Inicio extends javax.swing.JFrame {
-    //Participante p=new Participante();
+    private Participante p=new Participante();
     /**
      * Creates new form Inicio
      */
@@ -53,6 +54,11 @@ public class Inicio extends javax.swing.JFrame {
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
+            }
+        });
+        jTextField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTextField1KeyPressed(evt);
             }
         });
 
@@ -113,25 +119,44 @@ public class Inicio extends javax.swing.JFrame {
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
-       
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         if(!jTextField1.getText().equals("")){
             try{
                 InetAddress address = InetAddress.getLocalHost();
-                //p.setNombre(jTextField1.getText().trim());
-                //p.setDireccion(address.getHostAddress());
-           // }catch(ErrorDatos e){
-           //     System.out.println(e);
+                p.setNombre(jTextField1.getText().trim());
+                p.setDireccion(address.getHostAddress());
+            }catch(ErrorDatos e){
+                System.out.println(e);
             } catch (UnknownHostException ex) {
                 Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
             }
-            ReunionUI p=new ReunionUI();
-            p.show();
+            ProponerReunionUI pr=new ProponerReunionUI();
+            pr.show();
             this.show(false);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextField1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextField1KeyPressed
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER){
+        if(!jTextField1.getText().equals("")){
+            try{
+                InetAddress address = InetAddress.getLocalHost();
+                p.setNombre(jTextField1.getText().trim());
+                p.setDireccion(address.getHostAddress());
+            }catch(ErrorDatos e){
+                System.out.println(e);
+            } catch (UnknownHostException ex) {
+                Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            ProponerReunionUI pr=new ProponerReunionUI();
+            pr.show();
+            this.show(false);
+        }
+        }
+    }//GEN-LAST:event_jTextField1KeyPressed
 
     /**
      * @param args the command line arguments
