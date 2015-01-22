@@ -5,41 +5,36 @@
  */
 package grapevine;
 
-import java.util.ArrayList;
+import java.util.GregorianCalendar;
 
 /**
  *
  * @author Hugo
  */
 public class Reunion {
-    private ArrayList <Participante> participantes;
-    private Cita cita;
+    private GregorianCalendar fecha;
+    private GregorianCalendar hora;
+    private String motivo;
     
-    // DUDA de 1 en 1 o varios ???????????????????????????????????????
     public Reunion(){}
-    public Reunion(ArrayList <Participante> p,Cita c){
-        setCita(c);
-        if (p!=null){
-            for(Participante par:p)
-                setParticipante(par);
-        }else{
-            new ArrayList();
-        }
+    
+    public Reunion(GregorianCalendar fecha,GregorianCalendar hora,String motivo){
         
     }
     
-    public void setParticipante(Participante p){
-        this.participantes.add(p);
+    private void setFecha(){}
+    private void setHora(){}
+    private void setMotivo(){}
+    
+    public GregorianCalendar getFecha(){
+        return fecha;
+    }
+    public GregorianCalendar gethora(){
+        return hora;
+    }
+    public String getMotivo(){
+        return motivo;
     }
     
-    public void setCita(Cita cita){
-        this.cita=cita;
-    }
     
-    public Cita getCita(){
-        return cita;
-    }
-    public ArrayList<Participante> getParticipantes(){
-        return participantes;
-    }
 }

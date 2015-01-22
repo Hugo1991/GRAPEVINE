@@ -11,7 +11,7 @@ package grapevine;
  */
 public class Participante  {
     private String nombre;
-    private String Direccion;
+    private String direccion;
     private Agenda agenda;
     
     public Participante(){}
@@ -21,7 +21,7 @@ public class Participante  {
         setDireccion(direccion);
     }
     
-    private void setNombre(String nombre)throws ErrorDatos{
+    public void setNombre(String nombre)throws ErrorDatos{
         if(nombre!=null)
             this.nombre=nombre;
         else
@@ -33,16 +33,18 @@ public class Participante  {
     private void setAgenda(Agenda agenda){
         this.agenda=agenda;
     }
-    private void setDireccion(String direccion){
-        this.Direccion=direccion;
+    public void setDireccion(String direccion){
+        this.direccion=direccion;
     }
-    
+    public String getDireccion(){
+        return direccion;
+    }
     
     ///------------------------------------------------------------///
     ///--------              UntipedActor            --------------///
     ///------------------------------------------------------------///
     public void emitirCita(){
-        Cita cita = new Cita();
+        Reunion cita = new Reunion();
     }
     
     public void onReceive(Object cita){

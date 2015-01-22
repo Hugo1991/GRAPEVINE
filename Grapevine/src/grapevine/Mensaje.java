@@ -12,7 +12,18 @@ package grapevine;
 public class Mensaje {
     private String emisor;
     private String mensaje;
-    
+    public void setMensaje(String mensaje){
+        this.mensaje=mensaje;
+    }
+    public void setEmisor(String emisor){
+        this.emisor=emisor;
+    }
+    public String getMensaje(){
+        return mensaje;
+    }
+    public String getEmisor(){
+        return emisor;
+    }
     public String toString(){
         return emisor+": "+mensaje;        
     }

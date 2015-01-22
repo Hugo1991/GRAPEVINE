@@ -12,18 +12,18 @@ import java.util.ArrayList;
  * @author Hugo
  */
 public class Agenda {
-    private ArrayList<Reunion> reuniones;
+    private ArrayList<Cita> reuniones;
     public Agenda(){}
-    public Agenda(ArrayList<Reunion> reuniones){
+    public Agenda(ArrayList<Cita> reuniones){
         if (reuniones != null){
-            for(Reunion r:reuniones)
+            for(Cita r:reuniones)
                 setReunion(r);
         }else{
             new ArrayList();
         }
     }
     
-    public void setReunion(Reunion r){
+    public void setReunion(Cita r){
         reuniones.add(r);
     }
     
@@ -33,12 +33,12 @@ public class Agenda {
     public String toString(){
         StringBuffer sb = new StringBuffer();
         sb.append("Reuniones:\n");
-        for(Reunion r:reuniones)
+        for(Cita r:reuniones)
             sb.append(r.toString()+"\n");
         return sb.toString();
     }
     
-    public boolean comprobar(Cita cita){
+    public boolean comprobar(Reunion cita){
         // buscar citas en las reuniones ----------------------------------
         return true;
     }
@@ -46,7 +46,7 @@ public class Agenda {
     
     }
     
-    public void borrarReunion(Reunion reunion){
+    public void borrarReunion(Cita reunion){
     
      // Borrar Reunion -----------------------------------------------------
     }
